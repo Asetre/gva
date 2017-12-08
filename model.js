@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-{Schema} = mongoose
+const {Schema} = mongoose
 
 //use golabl promise instead of mongoose promise
 mongoose.Promise = global.Promise
