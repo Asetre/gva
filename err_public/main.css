@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding; 0;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.link-list {
+    font-size: 26px;
+}
+
+form {
+    width: 600px;
+}
