@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const router = express.Router()
 const Posts = require('./model')
 const bodyParser = require('body-parser')
+const path = require('path')
 
 //Config
 const PORT = 3000
@@ -14,10 +15,15 @@ mongoose.Promise = global.Promise
 
 //Middleware
 app.use(bodyParser.json())
+app.use(router)
 
 /*-----------------------------------
 Routes
 ------------------------------------*/
+router.get('/*', (req, res) => {
+    //Send the html file for all requests, react-router-dom will handle client side routing
+    res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
+})
 router.post('/posts/submit', (req, res) => {
     let title = req.body.title
     let email = req.body.email
